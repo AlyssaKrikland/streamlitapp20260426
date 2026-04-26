@@ -79,17 +79,15 @@ restext = [
 
 def prefun():
     pred_data = pd.DataFrame([st.session_state.predata])
-    names1 = pred_data.columns.tolist()
-    pred_data = pred_data[names]
-    
     pred_data1 = pred_data.copy()
     
     for i in pred_data1.columns.tolist():
         pred_data1[i] = pred_data1[i].apply(lambda x: str(round(x, 2)) if isinstance(x, float) else str(x))
     
     with st.expander("**Current entered values**", True):
-        pred_data1.columns = names1
         st.table(pred_data1)
+
+    pred_data = pred_data[names]
         
     r_p = []
 
