@@ -95,7 +95,7 @@ def prefun():
         r_p.append(float(i.predict_proba(pred_data)[0][1]))
     proba = round(sum(r_p)/len(r_p)*100, 3)
 
-    st.write(pred_data)
+    st.write(proba)
     
     with st.expander("**Predict result**", True):
         # st.html(f"<div style='text-align: center; font-weight: bold; color:#4676C8;'>Model optimal threshold {threshold},{sum(r_p)/len(r_p)}</div><hr>")
