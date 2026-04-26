@@ -96,10 +96,10 @@ def prefun():
     proba = round(sum(r_p)/len(r_p)*100, 3)
     
     with st.expander("**Predict result**", True):
-        st.html(f"<div style='text-align: center; font-weight: bold; color:#4676C8;'>Model optimal threshold {threshold}</div><hr>")
+        st.html(f"<div style='text-align: center; font-weight: bold; color:#4676C8;'>Model optimal threshold {threshold},{sum(r_p)/len(r_p)}</div><hr>")
         
         if sum(r_p)/len(r_p) > threshold:
-            st.markdown(f"""<div style="color: black; font-size: 24px; text-align: center; font-weight: bold;">{restext[0]},{sum(r_p)/len(r_p)}</div>""", unsafe_allow_html=True)
+            st.markdown(f"""<div style="color: black; font-size: 24px; text-align: center; font-weight: bold;">{restext[0]}</div>""", unsafe_allow_html=True)
         else:
             st.markdown(f"""<div style="color: black; font-size: 24px; text-align: center; font-weight: bold;">{restext[1]}</div>""", unsafe_allow_html=True)
         
